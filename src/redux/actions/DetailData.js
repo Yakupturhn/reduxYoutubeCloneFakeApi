@@ -1,18 +1,15 @@
 // redux/actions/HomeData.js
 import axios from "axios";
 
-const homeAction = (data) => async (dispatch) => {
+const detailAction = (id) => async (dispatch) => {
   try {
     dispatch({ type: "GET_VIDEOS_START" }); // Yükleme başladı
     const options = {
       method: "GET",
-      url: "https://youtube-v31.p.rapidapi.com/search",
+      url: "https://youtube-v31.p.rapidapi.com/videos",
       params: {
-        q: data,
-        part: "snippet,id",
-        regionCode: "US",
-        maxResults: "50",
-        order: "date",
+        part: "contentDetails,snippet,statistics",
+        id: id,
       },
       headers: {
         "X-RapidAPI-Key": "ffebe40167msh9667e2e5aba1ffcp12b028jsndd9c8567c9e8",
@@ -31,4 +28,4 @@ const homeAction = (data) => async (dispatch) => {
   }
 };
 
-export default homeAction;
+export default detailAction;

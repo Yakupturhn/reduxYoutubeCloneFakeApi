@@ -1,7 +1,7 @@
 // redux/actions/HomeData.js
 import axios from "axios";
 
-const homeAction = (data) => async (dispatch) => {
+const searchAction = (data) => async (dispatch) => {
   try {
     dispatch({ type: "GET_VIDEOS_START" }); // Yükleme başladı
     const options = {
@@ -31,4 +31,4 @@ const homeAction = (data) => async (dispatch) => {
   }
 };
 
-export default homeAction;
+export default searchAction;

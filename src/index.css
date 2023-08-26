@@ -12,4 +12,7 @@
   .icons-style {
     @apply text-xl text-gray-900 cursor-pointer;
   }
+  .align-items {
+    @apply flex items-center;
+  }
 }
